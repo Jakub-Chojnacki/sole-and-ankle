@@ -1,13 +1,13 @@
-import React from 'react';
-import styled from 'styled-components/macro';
+import React from "react";
+import styled from "styled-components/macro";
 
-import { WEIGHTS } from '../../constants';
+import { WEIGHTS } from "../../constants";
 
-import Breadcrumbs from '../Breadcrumbs';
-import Select from '../Select';
-import Spacer from '../Spacer';
-import ShoeSidebar from '../ShoeSidebar';
-import ShoeGrid from '../ShoeGrid';
+import Breadcrumbs from "../Breadcrumbs";
+import Select from "../Select";
+import Spacer from "../Spacer";
+import ShoeSidebar from "../ShoeSidebar";
+import ShoeGrid from "../ShoeGrid";
 
 const ShoeIndex = ({ sortId, setSortId }) => {
   return (
@@ -19,6 +19,7 @@ const ShoeIndex = ({ sortId, setSortId }) => {
             label="Sort"
             value={sortId}
             onChange={(ev) => setSortId(ev.target.value)}
+            variant="inline"
           >
             <option value="newest">Newest Releases</option>
             <option value="price">Price</option>
@@ -31,9 +32,7 @@ const ShoeIndex = ({ sortId, setSortId }) => {
         <Breadcrumbs>
           <Breadcrumbs.Crumb href="/">Home</Breadcrumbs.Crumb>
           <Breadcrumbs.Crumb href="/sale">Sale</Breadcrumbs.Crumb>
-          <Breadcrumbs.Crumb href="/sale/shoes">
-            Shoes
-          </Breadcrumbs.Crumb>
+          <Breadcrumbs.Crumb href="/sale/shoes">Shoes</Breadcrumbs.Crumb>
         </Breadcrumbs>
         <Spacer size={42} />
         <ShoeSidebar />
@@ -42,13 +41,32 @@ const ShoeIndex = ({ sortId, setSortId }) => {
   );
 };
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 32px;
+  justify-content: space-between;
+  align-items: baseline;
 
-const LeftColumn = styled.div``;
+`;
 
-const MainColumn = styled.div``;
+const LeftColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
-const Header = styled.header``;
+const MainColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+`;
+
+const Header = styled.header`
+  display: flex;
+  gap: 32px;
+  justify-content: space-between;
+  align-items: flex-start;
+`;
 
 const Title = styled.h2`
   font-size: 1.5rem;
