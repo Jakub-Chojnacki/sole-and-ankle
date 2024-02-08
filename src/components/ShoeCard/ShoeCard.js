@@ -71,6 +71,7 @@ const Image = styled.img`
   display: block;
   width: 100%;
   position: relative;
+  border-radius: 16px 16px 4px 4px;
 `;
 
 const Row = styled.div`
